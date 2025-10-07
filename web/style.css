@@ -1,0 +1,45 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #121212;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 400px;
+  background: #1e1e1e;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+#chat-box {
+  height: 300px;
+  overflow-y: auto;
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.message {
+  margin: 5px 0;
+}
+
+.user {
+  text-align: right;
+  color: #4fc3f7;
+}
+
+.bot {
+  text-align: left;
+  color: #a5d6a7;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+}
