@@ -1,12 +1,20 @@
 import spacy
+from spacy.cli import download
 
-nlp = spacy.load("en_core_web_sm")
+MODEL_NAME = "en_core_web_sm"
+
+try:
+    nlp = spacy.load(MODEL_NAME)
+except OSError:
+    print(f"Downloading {MODEL_NAME}...")
+    download(MODEL_NAME)
+    nlp = spacy.load(MODEL_NAME)
+
 
 def get_intent(text):
     text = text.lower()
     doc = nlp(text)
 
-    # Check math first (so 'times' doesn't trigger 'time')
     if any(w in text for w in ["calculate", "solve", "plus", "minus", "times", "multiply", "divide", "into", "by"]):
         return "math"
     elif "remind" in text or "reminder" in text:
